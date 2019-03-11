@@ -1,2 +1,5 @@
-### Read *.pfx private key
+### Read/Get private key from*.pfx
 openssl.exe pkcs12 -in ".\certificate.pfx" -nocerts -nodes -out .\key.pem
+
+### Combine key.pem and certificate.pem to *.pfx file
+openssl.exe pkcs12 -export -out certificate.pfx -inkey key.pem -in certificate.pem
