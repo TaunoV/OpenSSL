@@ -3,3 +3,6 @@ openssl.exe pkcs12 -in certificate.pfx -nocerts -nodes -out key.pem
 
 ### Combine key.pem and certificate.pem to *.pfx file
 openssl.exe pkcs12 -export -out certificate.pfx -inkey key.pem -in certificate.pem
+
+### Geenrate csr & keyfile
+openssl req -new -newkey rsa:2048 -nodes -keyout your_domain.key -out your_domain.csr
